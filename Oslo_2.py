@@ -3,6 +3,7 @@ import numpy as np
 import random as rd
 import matplotlib.pyplot as plt
 from log_bin import *
+
 #Length of domain
 #Porbability of threshold
 
@@ -21,18 +22,27 @@ class oslo():
         # add rice grain to lefthand side
         self.height[0] += 1
 
-    def transrec(self, T): #n starting power, m is number of powers afterwards
-        # ssave= []
-        # hsave= []
+    def transrec(self, T, R): #n starting power, m is number of powers afterwards
+        ssave= []
+        hsave= []
         tc =0
+        self.time= T
         while T >0 :
             self.drive()
             a, h = self.relax()
-            ssave.extend([a])
-            hsave.extend([h])
             T -= 1
-            if self.height[self.size-1]== 0:
+            if self.height[self.size-1] == 0:
+            # if sum(self.height) <= 1.8*(self.size**2)/2 :
                 tc +=1
+                if R == True :
+                    ssave.extend([a])
+                    hsave.extend([h])
+                else:
+                    pass
+            else :
+                ssave.extend([a])
+                hsave.extend([h])
+
 
         return ssave, hsave, tc
             # print(ssave)
