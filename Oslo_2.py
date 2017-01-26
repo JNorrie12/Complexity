@@ -26,12 +26,16 @@ class oslo():
         ssave= []
         hsave= []
         tc =0
+        y= 0
         self.time= T
         while T >0 :
             self.drive()
-            a, h = self.relax()
+            a, h, x = self.relax()
             T -= 1
-            if self.height[self.size-1] == 0:
+            y += x
+            if y <= 1 :
+
+            # if self.height[self.size-1] == 0:
             # if sum(self.height) <= 1.8*(self.size**2)/2 :
                 tc +=1
                 if R == True :
@@ -44,7 +48,7 @@ class oslo():
                 hsave.extend([h])
 
 
-        return ssave, hsave, tc
+        return ssave, hsave, tc,
             # print(ssave)
             # b, c = log_bin(ssave)
             # plt.loglog(b,c )
@@ -59,11 +63,13 @@ class oslo():
         slope = self.height - shift
         truefalse = (slope) > self.thresh #When slope>thresh = 1
         s=0
+        x=0
         while np.sum(truefalse) > 0 :
             for i in np.arange(self.size):
                  if truefalse[i] == 1 :
                     if i==self.size -1 :
                         self.height[self.size - 1] -= 1
+                        x += 1
                     else:
                         self.height[i] -= 1
                         self.height[i+1] += 1
@@ -73,7 +79,7 @@ class oslo():
             shift[-1] = 0
             slope = self.height - shift
             truefalse = (slope) > self.thresh  #Used to update truefalse, better way to do this?
-        return s, self.height[0]
+        return s, self.height[0], x
 
  #creating objects
 # ssave = []
@@ -84,12 +90,17 @@ class oslo():
 #     t -= 1
 #
 # plt.hist(ssave, histtype= 'step')
-# plt.
-# L=31
+# # plt.
+# L=128
 # p= 0.5
 # pile = oslo(L, p)
-# while True:
-#     pile.drive()
-#     pile.relax()
-#     pile.draw()
-#     raw_input()
+# # while True:
+# #     pile.drive()
+# #     a,b, c, =pile.relax()
+# #     pile.draw()
+# #     print c
+# #     raw_input()
+# a, b, c = pile.transrec(20000, True)
+# print c
+# plt.plot(b)
+# plt.show()

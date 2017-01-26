@@ -3,25 +3,25 @@ import random as rd
 import matplotlib.pyplot as plt
 from log_bin import *
 from Oslo_2 import *
-# n= 5
-# m= 3
-# p = 0.5
-# L=[2**x for x in range(n,n+m)]
-# print L
-# piles= []
-# Tssave=[]
-# Thsave=[]
-# Ttc=[]
-#
-# for i in range(len(L)):
-#     piles.extend([oslo(L[i], p)])
-# for pile in piles:
-#         ssave, hsave, tc = pile.transrec(10000, False)
-#         Thsave.extend(hsave)
-#         Ttc.extend([tc])
-#         plt.plot(hsave)
-# print Ttc
-# plt.show()
+n= 4
+m= 4
+p = 0.5
+L=[2**x for x in range(n,n+m)]
+print L
+piles= []
+Tssave=[]
+Thsave=[]
+Ttc=[]
+
+for i in range(len(L)):
+    piles.extend([oslo(L[i], p)])
+for pile in piles:
+        ssave, hsave, tc = pile.transrec(10000, True)
+        Thsave.extend(hsave)
+        Ttc.extend([tc])
+        plt.plot(hsave[-1])
+print Ttc
+plt.show()
 #
 # plt.plot(Ttc)
 # plt.show()
@@ -73,22 +73,29 @@ from Oslo_2 import *
 
 ###################################################################
 # #2c)
-n= 5
-m= 3
-p = 0.5
-L=[2**x for x in range(n,n+m)]
-print L
-piles= []
+# n= 5
+# m= 3
+# p = 0.5
+# L=[2**x for x in range(n,n+m)]
+# print L
+# piles= []
 for i in range(len(L)):
     piles.extend([oslo(L[i], p)])
-for pile in piles:
-    ssave, hsave, tc = pile.transrec(10000, False)
-    Mean = [sum(hsave[0:j])/j for j in range(1, len(hsave)+1)]
-#
-#     # hsq= [sum([i**2 for i in hsave][0:j])/j for j in range(1, len(hsave)+1)]
-#     # sd= [(hsq[i]- Mean[i]**2)**0.5 for i in range(0, len(hsave))]
-    plt.plot(np.array(range(len(Mean))), Mean)
-plt.show()
+    for pile in piles:
+        ssave, hsave, tc = pile.transrec(10000, False)
+        # Mean = [sum(hsave[0:j])/j for j in range(1, len(hsave)+1)]
+        Mean = sum(hsave) / pile.time
+        TMean.extend([Mean])
+        #     # hsq= [sum([i**2 for i in hsave][0:j])/j for j in range(1, len(hsave)+1)]
+        #     # sd= [(hsq[i]- Mean[i]**2)**0.5 for i in range(0, len(hsave))]
+        # plt.plot(np.array(range(len(Mean))), Mean)
+        hsq = [sum(i ** 2 for i in hsave) / pile.time]
+        sd = (hsq - Mean ** 2) ** .5
+        Tsd.extend(sd)
+        plt.plot(TMean)
+        plt.plot(Tsd)
+
+        plt.show()
 
 ####################################################################
 #2d
