@@ -6,7 +6,7 @@ from Oslo_2 import *
 import json
 
 n = 3
-m = 5
+m = 6
 p = 0.5
 L = [2 ** x for x in range(n, n + m)]
 def Collect_data(p, n, m):
@@ -16,7 +16,7 @@ def Collect_data(p, n, m):
         # make a pile
         pile = oslo(L[i], p)
         # drop_grains(self,trans=500,recur=1000,from_zero=True,draw=False):
-        ssave, hsave, tc  = pile.transrec(10000,True)
+        ssave, hsave, tc  = pile.transrec(100,True)
 
         file_path_s = 'Database/Avalanche_size' + str(L[i]) + 'Prob' + str(p) + '.json'
         file_path_h = 'Database/Total_height' + str(L[i]) + 'Prob' + str(p) +'.json'
@@ -57,6 +57,8 @@ def Import_data(Avalanche, Total, Sum, p) :
 
     return sv, hv, tcv
 
+
+
 # # ##############PLOTTTER################
 # sv, hv, tcv =Import_data(True, True, True)
 # for i in range(len(hv)):
@@ -65,4 +67,3 @@ def Import_data(Avalanche, Total, Sum, p) :
 # print tcv
 # plt.plot(tcv)
 # plt.show()
-

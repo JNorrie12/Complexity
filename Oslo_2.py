@@ -12,7 +12,7 @@ class oslo():
         self.size = L
         self.p = p
         self.height = np.zeros(self.size)
-        self.thresh = np.array([rd.randint(1, 2) for x in self.height])
+        self.thresh = np.array([rd.randint(1, 2) for x in self.height])#np.array([2 for x in self.height])
 
     def draw(self):
         for i in range(self.size):
@@ -22,7 +22,7 @@ class oslo():
         # add rice grain to lefthand side
         self.height[0] += 1
 
-    def transrec(self, T, R): #n starting power, m is number of powers afterwards
+    def transrec(self, T): #n starting power, m is number of powers afterwards
         ssave= []
         hsave= []
         tc =0
@@ -34,18 +34,9 @@ class oslo():
             T -= 1
             y += x
             if y <= 1 :
-
-            # if self.height[self.size-1] == 0:
-            # if sum(self.height) <= 1.8*(self.size**2)/2 :
                 tc +=1
-                if R == True :
-                    ssave.extend([a])
-                    hsave.extend([h])
-                else:
-                    pass
-            else :
-                ssave.extend([a])
-                hsave.extend([h])
+            ssave.extend([a])
+            hsave.extend([h])
 
 
         return ssave, hsave, tc,
@@ -89,18 +80,10 @@ class oslo():
 #     ssave.extend([a])
 #     t -= 1
 #
-# plt.hist(ssave, histtype= 'step')
-# # plt.
-# L=128
-# p= 0.5
-# pile = oslo(L, p)
-# # while True:
-# #     pile.drive()
-# #     a,b, c, =pile.relax()
-# #     pile.draw()
-# #     print c
-# #     raw_input()
-# a, b, c = pile.transrec(20000, True)
+# # plt.hist(ssave, histtype= 'step')
+# # # plt.
+# pile=oslo(16, 0.5)
+# a, b, c = pile.transrec(2000)
 # print c
 # plt.plot(b)
 # plt.show()
