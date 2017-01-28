@@ -209,15 +209,18 @@ if input is 'd':
     #plt.show()
         Vmean, Vsd = standard_dev()
         standard = (np.array(height[i][tc[i]:]) - Vmean[i])/Vsd[i]
-        # norm , bins= np.histogram(standard, bins=16, density = True)
-        # width = np.diff(bins)
-        # center = (bins[:-1] + bins[1:]) / 2
-        # plt.bar(center, norm, align='center', width=width)
-        # plt.show()
-        plt.hist(standard, normed= True, bins=15, histtype= 'step' ,range=[-8,8])
+        bins0= range(L,2*L+1)
+
+        bins= (np.array(bins0) - Vmean[i])/Vsd[i]
+        #print bins
+        ax1 = plt.subplot(131)
+        ax1.hist(standard, normed= True, bins=bins, histtype='step', range=[-8,8])
+        ax1.hist(standard, normed=True, bins=bins, histtype='step', range=[-8, 8], align= 'mid')
+        ######What's the difference???########
         x = np.linspace(-3, 3, 100)
-        plt.plot(x, mlab.normpdf(x, 0, 1))
-        plt.show()
+        ax1.plot(x, mlab.normpdf(x, 0, 1))
+        ax1.set_xlim([-8,8])
+    plt.show()
 
         #standfreq = np.bincount(np.array([int(standard[j]) for j in range(tc[i], len(height[i]))]))
         #standprob= standfreq/float(float(len(height[i])-tc[i]))
