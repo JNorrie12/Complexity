@@ -214,8 +214,8 @@ if input is 'd':
         bins= (np.array(bins0) - Vmean[i])/Vsd[i]
         #print bins
         ax1 = plt.subplot(131)
-        ax1.hist(standard, normed= True, bins=bins, histtype='step', range=[-8,8])
-        ax1.hist(standard, normed=True, bins=bins, histtype='step', range=[-8, 8], align= 'mid')
+        # ax1.hist(standard, normed= True, bins=bins, histtype='step', range=[-8,8])
+        ax1.hist(standard, normed=True, bins=bins, histtype='step', range=[-8, 8], align= 'left')
         ######What's the difference???########
         x = np.linspace(-3, 3, 100)
         ax1.plot(x, mlab.normpdf(x, 0, 1))
