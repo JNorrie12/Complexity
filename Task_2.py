@@ -6,38 +6,10 @@ from Oslo_2 import *
 import sys
 from data import *
 input = sys.argv[1]
-
-# n= 4
-# m= 4
-# p = 0.5
-# L=[2**x for x in range(n,n+m)]
-# print L
-# piles= []
-# Tssave=[]
-# Thsave=[]
-# Ttc=[]
-#
-# for i in range(len(L)):
-#     piles.extend([oslo(L[i], p)])
-# for pile in piles:
-#         ssave, hsave, tc = pile.transrec(10000, True)
-#         Thsave.extend(hsave)
-#         Ttc.extend([tc])
-#         plt.plot(hsave[-1])
-# print Ttc
-# plt.show()
-#
-# plt.plot(Ttc)
-# plt.show()
-# Ttcscale= np.array(Ttc)/np.array(L)
-# print Ttcscale
-# plt.plot(Ttcscale)
-# plt.show()
-
 ################################################################################
 #REMEMBER TO CHANGE M N IN DATA
 if input is 'a':
-    aval, height, tc = Import_data(True, True, True, 0.5)
+    aval, height, tc = Import_data(0.5, 3, 5)
     for i in height:
         plt.plot(i[:5000])
     plt.title('Heights')
@@ -46,7 +18,7 @@ if input is 'a':
 
     plt.show()
 elif input is 'y':
-    aval, height, tc = Import_data(True, True, True, 0.5)
+    aval, height, tc = Import_data(0.5, 3, 5)
     L=[]
     for i in range(len(tc)):
         L.append(2**(3+i))
@@ -87,7 +59,7 @@ elif input is 'y':
 #2b)
 elif input is 'b':
      #CHANGE W FOR SMOOTHNESS
-    aval, height, tc = Import_data(True, True, True, 0.5)
+    aval, height, tc = Import_data(0.5, 3, 5)
     for i in range(len(height[:7])):
         #CHANGE WHICH TO PROCESS HERE
         W= (2**(3+i))
@@ -96,7 +68,7 @@ elif input is 'b':
     plt.show()
 
 elif input is 'x':
-    aval, height, tc = Import_data(True, True, True, 0.5)
+    aval, height, tc = Import_data(0.5, 3, 5)
     for i in range(len(height[:7])):
         L = (2 ** (3 + i))
         W = 100
@@ -106,16 +78,7 @@ elif input is 'x':
                range(W, len(height[i][:20000]) - W)]  # CHANGE TIME HERE
         plt.plot(Tshrink , Mov)
     plt.show()
-################################################################################################################
-
-#
-#
-# hsq = [i**0.5 for i in hsave]
-#         W=100
-#         Mov = [sum(hsave[j-W: j+W])/pile.size for j in range(W, len(hsave)-W)] #how do I shrink the graph??? Thinking h**2
-#         plt.plot(np.array(range(len(Mov)))/pile.size**2, Mov) #time scales with L^2
-#
-# plt.show()
+########################################################################################################
 
 ###################################################################
 # #2c) ~~~~~WORKING~~~~~
@@ -125,7 +88,7 @@ if input is 'c':
 # p = 0.5
 # L=[2**x for x in range(n,n+m)]
 
-    aval, height, tc = Import_data(True, True, True, 0.5)
+    aval, height, tc = Import_data(0.5, 3, 5)
     L= []
     VMean=[]
     for i in range(len(height)):
@@ -153,7 +116,7 @@ if input is 'c':
     plt.show()
 
 elif input is 'z':
-    aval, height, tc = Import_data(True, True, True, 0.5)
+    aval, height, tc = Import_data(0.5, 3, 5)
     L = []
     Vsd = []
     for i in range(len(height)):
@@ -198,33 +161,21 @@ def standard_dev():
 
 if input is 'd':
     import matplotlib.mlab as mlab
-    aval, height, tc = Import_data(True, True, True, 0.5)
+    aval, height, tc = Import_data(0.5, 3, 5)
     for i in range(len(height)):
         L= 2**(3+i)
-        #freq = np.bincount(np.array([int(height[i][j]) for j in range(tc[i], len(height[i]))]))
-        #prob = freq/float(len(height[i])-tc[i])
-        #print sum(prob)
-        #width = 1.5
-       # plt.plot(prob)
-    #plt.show()
+
         Vmean, Vsd = standard_dev()
         standard = (np.array(height[i][tc[i]:]) - Vmean[i])/Vsd[i]
         bins0= range(L,2*L+1)
 
         bins= (np.array(bins0) - Vmean[i])/Vsd[i]
-        #print bins
         ax1 = plt.subplot(131)
-        # ax1.hist(standard, normed= True, bins=bins, histtype='step', range=[-8,8])
         ax1.hist(standard, normed=True, bins=bins, histtype='step', range=[-8, 8], align= 'left')
-        ######What's the difference???########
         x = np.linspace(-3, 3, 100)
         ax1.plot(x, mlab.normpdf(x, 0, 1))
         ax1.set_xlim([-8,8])
     plt.show()
-
-        #standfreq = np.bincount(np.array([int(standard[j]) for j in range(tc[i], len(height[i]))]))
-        #standprob= standfreq/float(float(len(height[i])-tc[i]))
-        #plt.plot(standardprob)
 
 
 

@@ -12,7 +12,7 @@ class oslo():
         self.size = L
         self.p = p
         self.height = np.zeros(self.size)
-        self.thresh = np.array([rd.randint(1, 2) for x in self.height])#np.array([2 for x in self.height])
+        self.thresh = np.array([np.random.binomial(1, self.p, None) + 1 for x in self.height])#np.array([2 for x in self.height])
 
     def draw(self):
         for i in range(self.size):
