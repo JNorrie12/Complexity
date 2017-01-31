@@ -13,7 +13,7 @@ def Collect_data(p, n, m):
         # make a pile
         pile = oslo(L[i], p)
         # drop_grains(self,trans=500,recur=1000,from_zero=True,draw=False):
-        ssave, hsave, tc  = pile.transrec(75000)
+        ssave, hsave, tc  = pile.transrec(10e5)
 
         file_path_s = 'Database/Avalanche_size' + str(L[i]) + 'Prob' + str(p) + '.json'
         file_path_h = 'Database/Total_height' + str(L[i]) + 'Prob' + str(p) +'.json'
@@ -50,7 +50,6 @@ def Import_data(p, n , m) :
 
     return sv, hv, tcv
 
-# Collect_data(0,8,1)
 
 # # ##############PLOTTTER################
 # sv, hv, tcv =Import_data(True, True, True)
