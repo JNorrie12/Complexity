@@ -41,7 +41,7 @@ elif input is 'y':
     L=[]
     for i in range(len(tc)):
         L.append(2**(3+i))
-    plt.plot(L, tc, )
+    plt.plot(L, tc)
     coeff =np.polynomial.polynomial.polyfit(L, tc,[2] )
     coeffrev= [coeff[2], 0, 0] ####reverses the list #####
     Quad = np.poly1d(coeffrev)
@@ -70,22 +70,24 @@ elif input is 'x':
     for i in range(len(height[:7])):
 
         L = (2 ** (3 + i))
-        W = 100
+        W = 25
         Tshrink = [k/(L**2) for k in range(W,len(height[i][:20000])- W)] #NEED TO CHANGE TIME DEPENDENT ON L
         Mov = [sum(height[i][j - W:j + W]) /(L*(2 * W + 1)) for j in
 
                range(W, len(height[i][:20000]) - W)]  # CHANGE TIME HERE
+        plt.plot(Mov)
         plt.plot(Tshrink , Mov)
     plt.show()
 ########################################################################################################
 # #2c) ~~~~~WORKING~~~~~Making more streamline w/ sd function
 if input is 'c':
-
-    aval, height, tc = Import_data(0.5, 1, 8) #######Include 2 and 4 to see signs of scaling################
+    n= 3
+    m=6
+    aval, height, tc = Import_data(0.5, n, m) #######Include 2 and 4 to see signs of scaling################
     L= []
     VMean=[]
     for i in range(len(height)):
-        L.append(2 ** (1 + i))
+        L.append(2 ** (n + i))
         summ = 0
         for j in range(len(height[i])): ####CHANGE HERE FOR Ls##########
             if j > tc[i] :
@@ -94,50 +96,58 @@ if input is 'c':
                 pass
 
         Mean= summ/(len(height[i])-(tc[i]))
-        VMean.append( Mean)
-
+        VMean.append(Mean)
 
     plt.title('Mean Height vs. System Size')
     plt.xlabel('System size L')
     plt.ylabel('Mean Height')
     plt.plot(L, VMean)
     plt.show()
-    # coeff = np.polyfit(L, VMean, 1)
-    # Line=np.poly1d(coeff)
-    # a0 = coeff[0]
-    # b = coeff[1]
-    # a1 = b/a0
-    # print a0, a1, b
-    # Fit=Line(range(256))
-    a0 = (VMean[7]-VMean[6])/(L[7]-L[6])
-    print a0
-    dist=[]
-    distcorr=[]
-    for i in range(len(height)):
-        d=(VMean[i] - a0*L[i])
-        dist.append(d)
+    a0=[]
+    finder =[]
+    for i in range(len(VMean)):
+        a= VMean[i]/L[i]
+        a0.append(a)
+
+    a00 = a0[-1]+0.017
+    #a00=(VMean[-1]-VMean[-2])/(L[-1]-L[-2])
+    for i in range(len(VMean)):
+        find= 1- a0[i]/(a00)
+        finder.append(find)
+    #creating points to align
+    logf =np.log(np.array(finder))
+    logL =np.log(np.array(L))
+    plt.plot(logL, logf)
+    fit = np.polyfit(logL, logf, 1)
+    fitt =(np.poly1d(fit))
+    fittt= fitt(range(6))
+    plt.plot(fittt)
+    print(fitt)
+    # plt.plot(L, a0)  # a0 is the average slope as L -> inf
+    plt.xlabel('System Size L')
+    plt.ylabel('L(^-1)*a0*L(1-a1*L(^-w) +...)')
+    plt.show()
+    LL = np.array(L)
+    w= fit[0]
+    approx =a00*(1 -np.exp(fit[1])*(LL**w))
+    #a1= 0.25 w= 0.63
+    plt.plot(L, a0)
+    plt.plot(L, approx)
+    plt.show()
+
     #The fact that the correction increases from 0, might need to add linear term
-    for i in range(len(height)):
-        corr= dist[i] - dist[-1]
-        distcorr.append(corr)
-
-    plt.plot(L, dist)
-    plt.xlabel('System Size')
-    plt.ylabel('(Mean Height) - a0L')
-    plt.show()
-    plt.plot(L,distcorr)
-    plt.xlabel('System Size')
-    plt.ylabel('(Mean Height) - (a0L + b)')
-    plt.plot()
-
-    plt.show()
-
-
-
-
-
-
-
+    # for i in range(len(height)):
+    #     corr= dist[i] - dist[-1]
+    #     distcorr.append(corr)
+    #
+    # plt.plot(L, dist)
+    # plt.xlabel('System Size')
+    # plt.ylabel('(Mean Height) - a0L')
+    # plt.show()
+    # plt.plot(L,distcorr)
+    # plt.xlabel('System Size')
+    # plt.ylabel('(Mean Height) - (a0L + b)')
+    # plt.plot()
 
 elif input is 'z':
     aval, height, tc = Import_data(0.5, 3, 6)

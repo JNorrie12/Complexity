@@ -123,7 +123,8 @@ def lin_bin(data, num_bins):
 # centres - list - the centre of each bin (in log space - ie. geometric mean)
 # counts  - list - the probability of data being in each bin
 ################################################################################
-def log_bin(data, bin_start=1., first_bin_width=1., a=1.5, datatype='float', drop_zeros=True, debug_mode=False):
+def log_bin(data, bin_start=1., first_bin_width=1., a=1.5, datatype='float', drop_zeros=True, debug_mode=False): #a=1.5 for 1e6, a=1.65 for 1e5
+
     # check datatype is valid
     valid_datatypes = ('float', 'integer')
     if datatype not in valid_datatypes:

@@ -52,10 +52,9 @@ if input is 'a':
 
 elif input is 'b':
     p=0.5
-    L = [2 ** x for x in range(n, n + m)]
-    aval, height, tc =Import_data(True, True, True, p)
+    aval, height, tc =Import_data(p, 8, 1)
     for i in aval:
-
+        print 'hi'
         width = 1.5
         plt.bar( range(len(i)), i, width)
         plt.show()
