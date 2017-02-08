@@ -12,10 +12,10 @@ input = sys.argv[1]
 if input == 'a':
     n=8
     m=1
-    aval, height, tc = Import_data(0.5, n, m)
+
+    aval, height, tc = Import_data(0.5, n, m, 1000000) #CHANGE SYSTEM SIZE HERE####
     for i in range(len(height)):
         L = 2 ** (m + n)
-    ############## Change sample size here #######################################
         avalN= aval[i][tc[i]:1000000]
         vals , counts = lin_bin(avalN, range(len(avalN)))
         plt.loglog(vals, counts, '.')

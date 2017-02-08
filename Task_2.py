@@ -28,7 +28,7 @@ def standard_dev():
     return Vmean, Vsd
 
 if input is 'a':
-    aval, height, tc = Import_data(0.5, 3, 6)
+    aval, height, tc = Import_data(0.5, 3, 6, 1000000)
     for i in height:
         plt.plot(i[:5000])
     plt.title('Heights')
@@ -37,7 +37,7 @@ if input is 'a':
 
     plt.show()
 elif input is 'y':
-    aval, height, tc = Import_data(0.5, 3, 6)
+    aval, height, tc = Import_data(0.5, 3, 6, 1000000)
     L=[]
     for i in range(len(tc)):
         L.append(2**(3+i))
@@ -57,7 +57,7 @@ elif input is 'y':
 #2b)
 elif input is 'b':
      #CHANGE W FOR SMOOTHNESS
-    aval, height, tc = Import_data(0.5, 3, 6)
+    aval, height, tc = Import_data(0.5, 3, 6, 1000000)
     for i in range(len(height[:7])):
         #CHANGE WHICH TO PROCESS HERE
         W= (2**(3+i))
@@ -66,24 +66,31 @@ elif input is 'b':
     plt.show()
 
 elif input is 'x':
-    aval, height, tc = Import_data(0.5, 3, 6)
-    for i in range(len(height[:7])):
+    n=3
+    m=6
+    aval, height, tc = Import_data(0.5, n, m, 1000000)
 
-        L = (2 ** (3 + i))
-        W = 25
-        Tshrink = [k/(L**2) for k in range(W,len(height[i][:20000])- W)] #NEED TO CHANGE TIME DEPENDENT ON L
-        Mov = [sum(height[i][j - W:j + W]) /(L*(2 * W + 1)) for j in
-
-               range(W, len(height[i][:20000]) - W)]  # CHANGE TIME HERE
-        plt.plot(Mov)
-        plt.plot(Tshrink , Mov)
+    ax1 = plt.subplot(111)
+    ax1.set_xlim([-0.1,2.3])
+    ax1.set_ylim([-0.1, 2.3])
+    for i in range(m):
+        L = (2 ** (n + i))
+        W = 2*L
+        Tshrink = [float(k)/(L**2) for k in range(W,len(height[i])- W)]#NEED TO CHANGE TIME DEPENDENT ON L
+        Mov = [sum(height[i][j - W:j + W]) /(L*(2 * W + 1)) for j in range(W, len(height[i]) - W)]  # CHANGE TIME HERE
+        ax1.plot(Tshrink, Mov)
+        # Tsqrt = [np.sqrt(k) for k in range(W, len(height[i]) - W)]
+        # plt.plot(Tshrink, Tsqrt )
+        if i == m-1:
+            Tsqrt=1.85*np.sqrt(Tshrink)
+            ax1.plot(Tshrink, Tsqrt, 'r--')
     plt.show()
 ########################################################################################################
 # #2c) ~~~~~WORKING~~~~~Making more streamline w/ sd function
 if input is 'c':
     n= 3
     m=6
-    aval, height, tc = Import_data(0.5, n, m) #######Include 2 and 4 to see signs of scaling################
+    aval, height, tc = Import_data(0.5, n, m, 1000000) #######Include 2 and 4 to see signs of scaling################
     L= []
     VMean=[]
     for i in range(len(height)):
@@ -150,7 +157,7 @@ if input is 'c':
     # plt.plot()
 
 elif input is 'z':
-    aval, height, tc = Import_data(0.5, 3, 6)
+    aval, height, tc = Import_data(0.5, 3, 6, 1000000)
     L = []
     Vsd = []
     for i in range(len(height)):
@@ -174,7 +181,7 @@ elif input is 'z':
 #2d)
 elif input is 'd':
     import matplotlib.mlab as mlab
-    aval, height, tc = Import_data(0.5, 3, 6)
+    aval, height, tc = Import_data(0.5, 3, 6, 1000000)
     for i in range(len(height)):
         L= 2**(3+i)
         Vmean, Vsd = standard_dev()
@@ -187,21 +194,3 @@ elif input is 'd':
         ax1.plot(x, mlab.normpdf(x, 0, 1))
         ax1.set_xlim([-8,8])
     plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
