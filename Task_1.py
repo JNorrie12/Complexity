@@ -36,7 +36,7 @@ if input is 'a':
     for p in range(0,2):
         n= 3
         m= 6
-        aval, height, tc = Import_data(p, n, m)
+        aval, height, tc = Import_data(p, n, m, 100000)
         L = [2 ** x for x in range(n, n + m)]
         for i in range(len(height)):
             x = range(1, len(height[i])+1 )
