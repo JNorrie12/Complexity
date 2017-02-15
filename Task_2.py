@@ -137,12 +137,6 @@ if input is 'c':
     m=6
     aval, height, tc = Import_data(0.5, n, m, 1000000) #######Include 2 and 4 to see signs of scaling################
     L, VMean, sd = standard_dev(n,m)
-    # plt.title('Mean Height vs. System Size')
-    # plt.xlabel('System size L')
-    # plt.ylabel('Mean Height')
-    # plt.plot(L, VMean)
-    print(VMean, sd)
-    plt.show()
     a0=[]
     finder =[]
     findera=[]
@@ -168,12 +162,12 @@ if input is 'c':
     fit = np.polyfit(logL, logf, 1)
     fitt =(np.poly1d(fit))
     fittt= fitt(range(6))
-    # plt.plot(fittt)
+
     logfa =np.log(findera)
     logfb= np.log(finderb)
     plt.plot(logL, logfa, color='orange')
     plt.plot(logL, logfb, 'g-')
-    # plt.plot(L, a0)  # a0 is the average slope as L -> inf
+    # a0 is the average slope as L -> inf
     blue_line = mlines.Line2D([], [], color='blue', label='a0=' + str(round(a00,3)))
     orange_line = mlines.Line2D([], [], color='orange', label='a0=' + str(round(a01,3)) + '(Too small)')
     green_line = mlines.Line2D([], [], color='green', label='a0=' + str(round(a02, 3)) + '(Too large)')
@@ -181,7 +175,7 @@ if input is 'c':
     plt.title('Approximation of a0')
     plt.xlabel('Log(L)')
 
-    plt.ylabel('<h>/L')
+    plt.ylabel('Log(<h>/L)')
     plt.show()
     LL = np.array(L)
     w= fit[0]
@@ -195,8 +189,9 @@ if input is 'c':
     grey_line = mlines.Line2D([], [], color='grey', linestyle='--', label='Limit of <h>/L as L-> inf')
     plt.legend(handles=[red_line, grey_line, s])
     plt.title('Fit of Scale Correction, with a0='+str(round(a00,3))+', a1='+str(round(np.exp(fit[1]), 3))+', w1='+str(round(-w,3)) )
+    plt.xlabel('System size L')
+    plt.ylabel('Mean Height/L')
     plt.show()
-
     fig = plt.figure(figsize=(6, 4))
     ax2 = fig.add_subplot(1,1,1)
     ax2.set_xlim([0, 35])
@@ -227,7 +222,7 @@ elif input is 'z':
     logsd= np.log(Vsd)
     logL= np.log(L) #DOESNT TAKE INTO ACCOUNT SCALING ERROR ##########
     a = plt.scatter(logL, logsd, color='black' , label='Data points',zorder=2)
-    fit= np.polyfit(logL[3:], logsd[3:], 1)
+    fit= np.polyfit(logL[-2:], logsd[-2:], 1)
     x =np.linspace(2,6, 20)
     plt.plot(x, fit[0]*x + fit[1], 'b-', zorder=1)
     plt.title('Fit of Loglog Plot')
@@ -236,6 +231,7 @@ elif input is 'z':
     blue_line = mlines.Line2D([], [], color='blue', linestyle='-', label='Linear Fit')
     plt.legend(handles=[blue_line, a])
     plt.show()
+    print fit[0]
     y=np.linspace(4,256,256)
     fitt= np.exp(fit[1])*y**fit[0]
     plt.plot(y, fitt, 'r--', zorder=2)
@@ -245,6 +241,26 @@ elif input is 'z':
     plt.ylabel('Log(Standard Deviation)')
     blue_line = mlines.Line2D([], [], color='red', linestyle='--', label='Fit='+str(round(np.exp(fit[1]),2))+'x^'+str(round(fit[0],2)))
     plt.legend(handles=[blue_line, a])
+    plt.show()
+
+elif input is 'g':
+    n=3
+    m=6
+    a= 0.68
+    b= 0.21
+    aval, height, tc = Import_data(0.5, n, m, 1000000)
+    L, Vmean, Vsd = standard_dev(n, m)
+    ml= np.array(Vsd)/np.array(L)**b
+    plt.plot(L,ml, 'k ', marker='o' )
+    plt.title('Plot of Scaled Standard Deviation')
+    plt.xlabel('System size')
+    plt.ylabel('Standard Deviation/L^'+str(b))
+    x = a*np.ones(len(L))
+    plt.plot(L, x, 'g:' )
+    black_line = mlines.Line2D([], [], color='black', linestyle=' ', marker='o', label='Data points')
+    grey_line= mlines.Line2D([], [], color='gray', linestyle=':', label='Approximate asymptote at of Stadard deviation('+str(a)+')')
+    plt.legend(handles=[black_line, grey_line])
+
     plt.show()
 ##################################################################
 #2d)
@@ -261,9 +277,7 @@ elif input is 'd':
     ax2.set_xlim([-8, 8])
 
     for i in range(len(height)):
-        # standard = (np.array(height[i][tc[i]:]) - Vmean[i])/Vsd[i]
         bins0= range(L[i],2*(L[i]+2))
-        # print sum(standard)/len(standard)
         bins= (np.array(bins0) - Vmean[i])/Vsd[i]
         a, b = np.histogram(height[i], bins=bins0, range=None, normed=True, weights=None, density=None)
         scaled = Vsd[i]*a
