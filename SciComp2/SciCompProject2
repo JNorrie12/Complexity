@@ -1,0 +1,19 @@
+#Question 1
+import numpy as np
+
+n= 10
+div=[]
+for i in range(3,n):
+    j= i % 3
+    k= i % 5
+    if (k ==0 or j ==0) and not (k==0 and j==0):
+        div.extend([i])
+sum= sum(np.array(div))
+print sum
+
+#Question 2
+# n= 4
+# Ainv = np.linalg.inv(np.matrix([[j**i for j in range(1, n+1)] for i in range(1, n+1)]))
+# print Ainv
+
+#Question 3

@@ -2,10 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54d15c4f-5d04-4150-a8f6-0f607f2a5740" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size128Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size128Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size16Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size16Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size256Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size256Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size32Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size32Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size64Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size64Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size8Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Avalanche_size8Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time128Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time128Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time16Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time16Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time256Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time256Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time32Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time32Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time64Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time64Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time8Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Crossover_Time8Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height128Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height128Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height16Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height16Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height256Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height256Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height32Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height32Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height64Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height64Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height8Prob0drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database/Total_height8Prob1drops100000.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Oslo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Oslo 1.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Oslo 1.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Oslo_2.py" afterPath="$PROJECT_DIR$/Oslo_2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Task_1.py" afterPath="$PROJECT_DIR$/Task_1.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Task_2.py" afterPath="$PROJECT_DIR$/Task_2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Task_3.py" afterPath="$PROJECT_DIR$/Task_3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log_bin.py" afterPath="$PROJECT_DIR$/log_bin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.py" afterPath="$PROJECT_DIR$/data.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,42 +64,7 @@
     <favorites_list name="Oslo" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Task_3.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Task_3.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log_bin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log_bin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Task_2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task_2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="299" column="13" lean-forward="true" selection-start-line="299" selection-start-column="13" selection-end-line="299" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,10 +74,11 @@
       <list>
         <option value="$PROJECT_DIR$/Oslo" />
         <option value="$PROJECT_DIR$/Oslo 1.1" />
-        <option value="$PROJECT_DIR$/data.py" />
-        <option value="$PROJECT_DIR$/Task_1.py" />
         <option value="$USER_HOME$/log_bin.py" />
         <option value="$PROJECT_DIR$/log_bin.py" />
+        <option value="$PROJECT_DIR$/Oslo_2.py" />
+        <option value="$PROJECT_DIR$/data.py" />
+        <option value="$PROJECT_DIR$/Task_1.py" />
         <option value="$PROJECT_DIR$/Task_2.py" />
         <option value="$PROJECT_DIR$/Task_3.py" />
       </list>
@@ -115,6 +123,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -143,12 +152,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/log_bin.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Oslo_2.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -359,15 +367,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18249337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35434008" sideWeight="0.5697613" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36623067" sideWeight="0.46206897" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28537455" sideWeight="0.48700264" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28537455" sideWeight="0.4827586" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35434008" sideWeight="0.43023872" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36623067" sideWeight="0.537931" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -393,16 +401,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Task_3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1638">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Task_1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -696,108 +694,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Oslo 1.1">
+    <entry file="file://$PROJECT_DIR$/Oslo 1.1" />
+    <entry file="file://$PROJECT_DIR$/Oslo" />
+    <entry file="file://$PROJECT_DIR$/Oslo" />
+    <entry file="file://$PROJECT_DIR$/Oslo" />
+    <entry file="file://$PROJECT_DIR$/Oslo" />
+    <entry file="file://$PROJECT_DIR$/Oslo" />
+    <entry file="file://$PROJECT_DIR$/Oslo" />
+    <entry file="file://$PROJECT_DIR$/Oslo" />
+    <entry file="file://$PROJECT_DIR$/Oslo 1.1" />
+    <entry file="file://$USER_HOME$/log_bin.py" />
+    <entry file="file://$PROJECT_DIR$/log_bin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Oslo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Oslo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Oslo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Oslo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Oslo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Oslo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Oslo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="51" column="20" lean-forward="false" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Oslo 1.1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Task_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="468">
+          <caret line="171" column="35" lean-forward="true" selection-start-line="171" selection-start-column="35" selection-end-line="171" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/log_bin.py" />
-    <entry file="file://$PROJECT_DIR$/log_bin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        <state relative-caret-position="846">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task_2.py">
+    <entry file="file://$PROJECT_DIR$/Task_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="299" column="13" lean-forward="true" selection-start-line="299" selection-start-column="13" selection-end-line="299" selection-end-column="13" />
+        <state relative-caret-position="3132">
+          <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task_3.py">
+    <entry file="file://$PROJECT_DIR$/Oslo_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+        <state relative-caret-position="18">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
           </folding>
         </state>
       </provider>
